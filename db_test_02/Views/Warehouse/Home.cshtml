@@ -1,0 +1,768 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- bootstrap icons cdn -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+
+    <!--
+        <link href="~/style.css" rel="stylesheet" />
+    -->
+
+
+
+
+    <title>- DH OneInventory</title>
+
+    <style>
+        body {
+            background-color: rgb(230, 235, 238);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+    </style>
+
+</head>
+<body>
+
+    <section>
+        <div class="container p-5" style="background-color:white">
+
+            <div class="row">
+                <div class="col-10">
+                    <h1 class="mt-4 ms-3"><a class="text-dark text-decoration-none" href="https://oneinventory.americas.hpqcorp.net/WWInventory/">GTS RACS World Wide Inventory</a></h1>
+                </div>
+                <div class="col-2">
+                    <img src="~/Image/HPE_logo.PNG" class="img-fluid mt-2" alt="..." />
+                </div>
+
+
+
+            </div>
+
+
+            <!-- Nav -->
+
+            <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="container-fluid">
+
+                    <!--
+            <a class="navbar-brand" href="#">Navbar</a>
+                -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Inventory Handling
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Inventory Management
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Inventory Reports & Action Logs
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Site Administration</a>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Help
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Action</a></li>
+                                    <li><a class="dropdown-item" href="#">Another action</a></li>
+                                    <li><a class="dropdown-item" href="#">Something else here</a></li>
+                                </ul>
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <hr class="mt-0">
+
+            <h4 class="mb-5">Search Inventories - Item Details</h4>
+
+            <div class="row">
+                <div class="mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Country-Lab</option>
+                        <option value="1">Taiwan - Lab 1 (Diag)</option>
+                        <option value="2">Houston - Lab 2 (Diag)</option>
+                        <option value="3">Costa Rica - Lab 3 (Diag)</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="row">
+                <h5 class="col mb-3">Search For:</h5>
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">ItemID</span>
+                        <input type="text" class="form-control" id="itemid">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Inventory #</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Serial Number</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Part Number</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Description</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Notes</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Part Alias</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Model Number</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Code Name/Build</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-text" id="inputGroup-sizing-lg">Part Number & Alias</span>
+                        <input type="text" class="form-control">
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Part Category</option>
+                        <option value="1">3D-Printer</option>
+                        <option value="2">Accelerator</option>
+                        <option value="3">Battery</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Status</option>
+                        <option value="1">Not Available</option>
+                        <option value="2">Missing</option>
+                        <option value="3">Scrapped</option>
+                    </select>
+                </div>
+
+            </div>
+
+            <!-- row -->
+
+            <div class="row">
+                <div class="col-lg-4 mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Part Owner</option>
+                        <option value="1">TonyDH Liu</option>
+                        <option value="2">Jacky Wu</option>
+                        <option value="3">Andy Liu</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>Current User</option>
+                        <option value="1">TonyDH Liu</option>
+                        <option value="2">Jacky Wu</option>
+                        <option value="3">Andy Liu</option>
+                    </select>
+                </div>
+
+                <div class="col-lg-4 mb-3">
+                    <select class="form-select" aria-label="Default select example">
+                        <option selected>External Companies</option>
+                        <option value="1">Inventec</option>
+                        <option value="2">Foxcon</option>
+                        <option value="3">Gigabyte</option>
+                    </select>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-4 mb-5 mt-3">
+                    <div class="form-check">
+                        <label class="form-check-label" for="flexCheckDefault">
+                            Filter Out Returned to Owner?
+                        </label>
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    </div>
+                </div>
+            </div>
+
+
+
+            <button type="button" class="btn btn-success mb-5 me-2" onclick="Read()">Read</button>
+
+
+
+            <!-- Open the Modal Create button -->
+            <button type="button" class="btn btn-success mb-5 me-2" onclick="create_item_modal()">Create</button>
+            <!-- Create Modal-->
+            <div class="modal" tabindex="-1" id="create_item_modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Create Item</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- form needs-validation-->
+                            <form class="row g-3 needs-validation" novalidate>
+                                <p class="text-secondary">Fill out the form below and create an item</p>
+                                <div class="mb-3">
+                                    <label for="create-modal-itemid" class="form-label">Item ID:</label>
+                                    <input type="text" class="form-control" id="create-modal-itemid" pattern="[\SA-Za-z0-9]{1,}" required>
+                                    <!--  \s Find a whitespace character  -->
+                                    <!-- \S Find a non-whitespace character -->
+                                    <div class="valid-feedback">
+                                        <!--  Looks good!  -->
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Item Name:</label>
+                                    <!--   pattern="^(?!\s*$).+"    will match any string that contains at least one non-space character  -->
+                                    <input class="form-control" id="create-modal-itemname" pattern="^(?!\s*$).+" required>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="exampleInputEmail1" class="form-label">Where is the Item:</label>
+                                    <input class="form-control" id="create-modal-where" pattern="^(?!\s*$).+" required>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <!--
+                                                           <div class="col-12">
+                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button class="btn btn-success" type="submit">Submit_Test</button>
+                        </div>
+                            -->
+
+                            </form>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="validate_form('create')">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Modal which show sucessful or not -->
+            <div class="modal" tabindex="-1" id="result_modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <!-- <h5 class="modal-title">This is result_modal</h5> -->
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <h5 class="text-primary text-center" id="result_modal_body"></h5>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+            <!-- Update Modal-->
+            <div class="modal" tabindex="-1" id="update_item_modal">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Update Item</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+
+                            <!-- form needs-validation-->
+                            <form class="row g-3 needs-validation" novalidate>
+                                <p class="text-secondary">Search by item ID first, then update it.</p>
+                                <div class="mb-3">
+                                    <label for="update-modal-itemid" class="form-label">Item ID:</label>
+                                    <input readonly type="text" class="form-control" id="update-modal-itemid" pattern="[\SA-Za-z0-9]{1,}" required>
+                                    <!--  \s Find a whitespace character  -->
+                                    <!-- \S Find a non-whitespace character -->
+                                    <div class="valid-feedback">
+                                        <!--  Looks good!  -->
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="update-modal-itemname" class="form-label">Item Name:</label>
+                                    <!--   pattern="^(?!\s*$).+"    will match any string that contains at least one non-space character  -->
+                                    <input class="form-control" id="update-modal-itemname" pattern="^(?!\s*$).+" required>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="update-modal-itemname" class="form-label">Where is the Item:</label>
+                                    <input class="form-control" id="update-modal-where" pattern="^(?!\s*$).+" required>
+                                    <div class="invalid-feedback">
+                                        Required
+                                    </div>
+                                </div>
+                                <!--
+                                                       <div class="col-12">
+                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button class="btn btn-success" type="submit">Submit_Test</button>
+                            </div>
+                        -->
+
+                            </form>
+
+
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary" onclick="validate_form('update')">Update</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Search Result -->
+            <section class="mb-5">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+
+                            <th scope="col">Item ID</th>
+                            <th scope="col">Item Name</th>
+                            <th scope="col">Where</th>
+                            <th scope="col"></th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody id="read-result">
+                    </tbody>
+
+                </table>
+
+                <button class="d-none btn btn-primary" type="button" disabled id="preloading-btn">
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                    &nbsp; Querying...
+                </button>
+
+
+            </section>
+
+
+
+
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination justify-content-center" id="pagging">
+                    <!--
+            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            -->
+
+                </ul>
+            </nav>
+
+            <!-- pagination / pagging
+        @@Html.PagedListPager(Model, page => Url.Action("Read", new { page, ViewBag.itemid }))
+    -->
+            <!-- Footer -->
+            <footer class="p-3 bg-white text-dark text-end position-relative">
+                <div class="container">
+                    <p>
+                        <a href="#" class="link-primary text-decoration-none">Privacy Statement</a> &nbsp;| &nbsp;
+                        <a href="#" class="link-primary text-decoration-none">Terms of Use</a> &nbsp;| &nbsp;
+                        <a href="#" class="link-primary text-decoration-none">Feedback</a> &nbsp;| &nbsp;
+                        <a href="#" class="link-primary text-decoration-none">Support</a> &nbsp;| &nbsp;
+                        HP Restricted
+                    </p>
+                    <p>&copy; Copyright 2022 Hewlett-Packard Development Company, L.P.</p>
+                </div>
+            </footer>
+
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ##################################################################################### -->
+    <!-- #########################                            ################################ -->
+    <!-- #########################       SCRIPT HERE          ################################ -->
+    <!-- #########################                            ################################ -->
+    <!-- ##################################################################################### -->
+    <!-- bootstrap 5 JavaScript CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <!-- Jquery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Myself -->
+    <script>
+
+        //Below is for validation in Modal -- Original code
+
+        /*
+           (function () {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+              var forms = document.querySelectorAll('.needs-validation')
+              debugger;
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+
+                .forEach(function (form) {
+                    form.addEventListener('submit', function (event) {
+
+                        if (!form.checkValidity()) {
+                            event.preventDefault()
+                            event.stopPropagation()
+
+                        }
+                        if (form.checkValidity()) {
+
+                            submit_create_item();
+                        }
+                        form.classList.add('was-validated')
+                    }, false)
+                })
+        })()
+         */
+
+
+        function validate_form(method) {
+            'use strict'
+            // Fetch all the forms we want to apply custom Bootstrap validation styles to
+            var forms = document.querySelectorAll('.needs-validation')
+
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms)
+
+                .forEach(function (form) {
+                    debugger;
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+
+                    }
+                    if (form.checkValidity()) {
+                        debugger;
+                        switch (method) {
+                            case 'create':
+                                create_item();;
+                                break;
+                            case 'update':
+                                update_item();
+                                break;
+                        }
+                        
+                    }
+                    form.classList.add('was-validated')
+
+                })
+
+        }
+
+
+
+
+        function Read(_page_active) {
+
+            document.getElementById("preloading-btn").classList.remove("d-none");
+            let _itemid = document.getElementById("itemid").value;
+            document.getElementById('read-result').innerHTML = "";
+
+            $.get("/Warehouse/Read",
+                {
+                    page_active: _page_active,
+                    itemid: _itemid,
+                    // city: "Duckburg"
+                },
+                function (data, status) {
+
+                    document.getElementById("preloading-btn").classList.add("d-none");
+
+                    if (data.not_found) {
+                        // if no data found
+                        $('#pagging').html('');
+                        document.getElementById('read-result').innerHTML = '<h3 class="text-success">No data found !</h3>';
+                    } else {
+                        debugger;
+                        // yes, have data
+                        let html_ = "";
+
+                        for (let i = 0; i < data.obj.length; i++) {
+                            html_ += "<tr>";
+                            html_ += "<td>" + data.obj[i].ItemID + "</td>";
+                            html_ += "<td>" + data.obj[i].ItemName + "</td>";
+                            html_ += "<td>" + data.obj[i].ItemWhere + "</td>";
+                            html_ += "<td>" + "<button type='button' class='btn btn-success' onclick='update_item_modal(" + data.obj[i].ItemID + ")'><i class='bi bi-pencil-square'></i>&nbsp; Edit</button>" + "</td>";
+                            html_ += "</tr>";
+                        }
+                        
+                        document.getElementById('read-result').innerHTML = html_;
+                        // show pagging
+                        pagging(data.totalPage , data.page_active); //total_page , page_active
+                    }
+
+
+
+
+                });
+        }
+
+
+        function Create() {
+            let _create_modal_itemid = document.getElementById('create-modal-itemid').value
+            let _create_modal_itemname = document.getElementById('create-modal-itemname').value
+            let _create_modal_where = document.getElementById('create-modal-where').value
+
+
+            $.post("/Warehouse/Create",
+                {
+                    itemID: _create_modal_itemid,
+                    itemName: _create_modal_itemname,
+                    where: _create_modal_where
+                    // city: "Duckburg"
+                },
+                function (data, status) {
+
+                });
+        }
+
+        function create_item_modal() {
+            $('#create-modal-itemid').val('');
+            $('#create-modal-itemname').val('');
+            $('#create-modal-where').val('');
+            $('#create_item_modal').modal("show");
+
+        }
+
+        function update_item_modal(_ItemID) {
+            $.get("/Warehouse/Read",
+                {
+                    itemID: _ItemID,
+                },
+                function (data, status) {
+                    debugger;
+                    for (let i=0; i < data.obj.length;i++) {
+                        $('#update-modal-itemid').val(data.obj[i].ItemID);
+                        $('#update-modal-itemname').val(data.obj[i].ItemName);
+                        $('#update-modal-where').val(data.obj[i].ItemWhere);
+
+                    }
+                    $('#update_item_modal').modal("show");
+                });
+        }
+
+
+        function create_item() {
+            let _create_modal_itemid = document.getElementById('create-modal-itemid').value
+            let _create_modal_itemname = document.getElementById('create-modal-itemname').value
+            let _create_modal_where = document.getElementById('create-modal-where').value
+            $.post("/Warehouse/Create",
+                {
+
+                    itemID: _create_modal_itemid,
+                    itemName: _create_modal_itemname,
+                    where: _create_modal_where
+                    // city: "Duckburg"
+                },
+                function (data, status) {
+                    $('#create_item_modal').modal("hide");
+                    $('#result_modal').modal("show");
+                    $("#result_modal_body").html(data);
+                });
+        }
+
+        function update_item() {
+            alert('this is update !!!');
+        }
+
+        function pagging(total_page, page_active) {
+            debugger;
+            //var total_page = 3;
+            //var page_active = 1;
+            var page_before = page_active - 1;
+            var page_after = page_active + 1;
+
+
+            $('#pagging').html('');
+
+
+            //Previous
+            if (page_before >= 1) {
+                $('#pagging').append('<li class="page-item"><a class="page-link" onclick="Read(' + page_before + ')">Previous</a></li>'); // enabled
+            } else {
+                $('#pagging').append('<li class="page-item disabled"><a class="page-link" onclick="Read(' + page_before + ')">Previous</a></li>'); // disabled
+            }
+
+            // Before page
+            if (page_before >= 1) {
+                $('#pagging').append('<li class="page-item"><a class="page-link" onclick="Read(' + page_before + ' )">' + page_before + '</a></li>'); 
+            }
+
+
+            // Actived page
+            $('#pagging').append('<li class="page-item active"><a class="page-link" onclick="Read(' + page_active + ' )">' + page_active + '</a></li>'); 
+
+
+            // After page
+            if (page_active == total_page) {
+                // No need display
+            }
+            else {
+                $('#pagging').append('<li class="page-item"><a class="page-link" onclick="Read(' + page_after + ' )">' + page_after + '</a></li>'); // enabled
+            }
+            
+
+
+            //Next
+            if (page_active == total_page) {
+                $('#pagging').append('<li class="page-item disabled"><a class="page-link" onclick="Read(' + page_after + ')">Next</a></li>'); // disabled
+            } else {
+                $('#pagging').append('<li class="page-item"><a class="page-link" onclick="Read(' + page_after + ')">Next</a></li>'); // enabled
+            }
+            
+        }
+
+
+
+    </script>
+
+</body>
+</html>
+

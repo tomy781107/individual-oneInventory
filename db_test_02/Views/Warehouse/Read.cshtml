@@ -1,0 +1,29 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+@using PagedList;
+@using PagedList.Mvc;
+
+@model IPagedList<db_test_02.DH_warehouse_table>
+
+@{
+    if (Model != null)
+    {
+        foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.ItemID</td>
+                <td>@item.ItemName</td>
+                <td>@item.ItemWhere</td>
+            </tr>
+        }
+    }
+
+}
+
+
+
+

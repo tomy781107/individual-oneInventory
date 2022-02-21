@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DH_warehouse_ModelStoreContainer" CdmEntityContainer="DH_warehouse_Entities">
+    <EntitySetMapping Name="DH_warehouse_table">
+      <EntityTypeMapping TypeName="DH_warehouse_Model.DH_warehouse_table">
+        <MappingFragment StoreEntitySet="DH_warehouse_table">
+          <ScalarProperty Name="ItemWhere" ColumnName="ItemWhere" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
